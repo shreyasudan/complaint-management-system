@@ -44,25 +44,74 @@ The application includes:
 - Backend API endpoints with PostgreSQL integration
 - Custom UI with elegant color scheme inspired by professional design aesthetics
 
-## Setup Instructions
+## Setup Instructions for Reviewers
 
-### Quick Start
+### Important Note
+While a start.sh script is provided, you may encounter issues depending on your PostgreSQL setup. Please follow these manual setup instructions for guaranteed success:
 
-For a quick setup, use the provided start script:
+### Prerequisites
+- Node.js and npm installed
+- PostgreSQL installed (any version)
 
+### Database Setup
+
+1. Create a PostgreSQL database named `complaints`:
+   ```bash
+   createdb complaints
+   ```
+   If the command is not found, you may need to add PostgreSQL to your PATH or use your system's PostgreSQL admin tool.
+
+2. Apply the database schema:
+   ```bash
+   cd backend
+   psql -d complaints -f src/db-schema.sql
+   ```
+
+### Environment Configuration
+
+1. Create a `.env` file in the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Add the following content (adjust username/password as needed for your PostgreSQL setup):
+   ```
+   PORT=3001
+   DATABASE_URL=postgresql://YOUR_USERNAME[:YOUR_PASSWORD]@localhost:5432/complaints
+   NODE_ENV=development
+   ```
+   Replace `YOUR_USERNAME` with your PostgreSQL username.
+   Add `:YOUR_PASSWORD` after the username if your PostgreSQL requires a password.
+
+### Starting the Application
+
+1. Start the backend:
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+
+2. In a separate terminal, start the frontend:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+3. Access the application:
+   - Client view: http://localhost:3000
+   - Admin dashboard: http://localhost:3000/admin
+
+### Quick Start (Optional)
+If you prefer to try the automated setup:
 ```bash
-# Make the script executable
 chmod +x start.sh
-
-# Run the script
 ./start.sh
 ```
+Note: This may require adjustments based on your PostgreSQL setup.
 
-This script will:
-1. Check for PostgreSQL installation
-2. Create a default .env file if needed
-3. Install dependencies for both frontend and backend
-4. Start both servers concurrently
+## Original Setup Instructions
 
 ### Manual Setup
 
