@@ -22,19 +22,22 @@ A full-stack web application for managing customer complaints with client and ad
 To add a screenshot:
 1. Take a screenshot of the client submission form
 2. Save it in a folder named 'screenshots' at the root of your project
-3. Replace this text with: `![Client Form](./screenshots/submission.png)`
+
+`![Client Form](./screenshots/submission.png)`
 
 ### Admin Dashboard
 To add a screenshot:
 1. Take a screenshot of the admin dashboard
 2. Save it in the 'screenshots' folder
-3. Replace this text with: `![Admin Dashboard](./screenshots/admin.png)`
+
+`![Admin Dashboard](./screenshots/admin.png)`
 
 ### Success Confirmation
 To add a screenshot:
 1. Take a screenshot of the success confirmation screen
 2. Save it in the 'screenshots' folder
-3. Replace this text with: `![Success Confirmation](./screenshots/confirmation.png)`
+
+`![Success Confirmation](./screenshots/confirmation.png)`
 
 ## Tech Stack
 
