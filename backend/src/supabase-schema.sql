@@ -1,8 +1,5 @@
--- Drop table if exists
-DROP TABLE IF EXISTS complaints;
-
 -- Create complaints table
-CREATE TABLE complaints (
+CREATE TABLE IF NOT EXISTS complaints (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
@@ -12,9 +9,9 @@ CREATE TABLE complaints (
 );
 
 -- Create an index for faster querying by status
-CREATE INDEX idx_complaints_status ON complaints(status);
+CREATE INDEX IF NOT EXISTS idx_complaints_status ON complaints(status);
 
--- Insert sample data
+-- Create sample data (optional)
 INSERT INTO complaints (name, email, complaint, status, created_at)
 VALUES 
   ('John Doe', 'john.doe@example.com', 'The product arrived damaged.', 'Pending', CURRENT_TIMESTAMP - INTERVAL '2 days'),

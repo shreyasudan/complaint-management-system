@@ -73,7 +73,7 @@ cd backend
 2. Create a `.env` file with the following content (adjust as needed):
 ```
 PORT=3001
-DATABASE_URL=postgresql://postgres:password@localhost:5432/complaints
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/complaints
 NODE_ENV=development
 ```
 
