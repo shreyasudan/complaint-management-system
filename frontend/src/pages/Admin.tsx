@@ -85,16 +85,16 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold mb-6">Admin Dashboard</h2>
+    <div className="bg-white rounded-lg shadow-md p-8">
+      <h2 className="text-2xl font-semibold mb-8 pb-2 border-b border-gray-200">Admin Dashboard</h2>
       
-      <div className="mb-4">
-        <label htmlFor="status-filter" className="mr-2 font-medium">Filter by status:</label>
+      <div className="mb-6">
+        <label htmlFor="status-filter" className="mr-2 font-medium text-gray-700">Filter by status:</label>
         <select 
           id="status-filter"
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="border border-gray-300 rounded-md p-2"
+          className="border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
         >
           <option value="all">All</option>
           <option value="Pending">Pending</option>
@@ -103,11 +103,11 @@ const Admin: React.FC = () => {
       </div>
       
       {filteredComplaints.length === 0 ? (
-        <p className="text-gray-500 text-center p-4">No complaints found.</p>
+        <p className="text-gray-500 text-center p-6 bg-gray-50 rounded-md">No complaints found.</p>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto border border-gray-200 rounded-lg">
           <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+            <thead className="bg-gray-100">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
@@ -136,13 +136,13 @@ const Admin: React.FC = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <button
                       onClick={() => handleStatusToggle(complaint.id, complaint.status)}
-                      className="text-indigo-600 hover:text-indigo-900 mr-3"
+                      className="text-red-700 hover:text-red-900 mr-4"
                     >
                       Toggle Status
                     </button>
                     <button
                       onClick={() => handleDelete(complaint.id)}
-                      className="text-red-600 hover:text-red-900"
+                      className="text-gray-600 hover:text-gray-900"
                     >
                       Delete
                     </button>

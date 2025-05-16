@@ -36,8 +36,8 @@ const Submit: React.FC = () => {
   if (submitted) {
     return (
       <div className="p-8 text-center bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-green-600 mb-4">Thank you!</h2>
-        <p className="text-gray-700">Your complaint has been submitted successfully.</p>
+        <h2 className="text-2xl font-bold text-red-700 mb-4">Thank you!</h2>
+        <p className="text-gray-700 mb-6">Your complaint has been submitted successfully.</p>
         <button 
           onClick={() => {
             setName('');
@@ -45,7 +45,7 @@ const Submit: React.FC = () => {
             setComplaint('');
             setSubmitted(false);
           }}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          className="px-6 py-3 bg-red-700 text-white rounded hover:bg-red-800 transition"
         >
           Submit another complaint
         </button>
@@ -54,56 +54,58 @@ const Submit: React.FC = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold mb-6">Submit a Complaint</h2>
+    <div className="bg-white rounded-lg shadow-md p-8">
+      <h2 className="text-2xl font-semibold mb-8 pb-2 border-b border-gray-200">Submit a Complaint</h2>
       
       {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
+        <div className="mb-6 p-4 bg-red-50 text-red-700 rounded border border-red-200">
           {error}
         </div>
       )}
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block font-medium text-gray-700">Name</label>
+          <label htmlFor="name" className="block font-medium text-gray-700 mb-1">Name</label>
           <input
             id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block font-medium text-gray-700">Email</label>
+          <label htmlFor="email" className="block font-medium text-gray-700 mb-1">Email</label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+            className="block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500"
           />
         </div>
         <div>
-          <label htmlFor="complaint" className="block font-medium text-gray-700">Complaint</label>
+          <label htmlFor="complaint" className="block font-medium text-gray-700 mb-1">Complaint</label>
           <textarea
             id="complaint"
             value={complaint}
             onChange={(e) => setComplaint(e.target.value)}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
-            rows={4}
+            className="block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-red-500 focus:border-red-500"
+            rows={5}
           />
         </div>
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full ${loading ? 'bg-blue-300' : 'bg-blue-500 hover:bg-blue-600'} text-white font-medium py-2 rounded-md transition`}
-        >
-          {loading ? 'Submitting...' : 'Submit Complaint'}
-        </button>
+        <div className="pt-4">
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full ${loading ? 'bg-red-300' : 'bg-red-700 hover:bg-red-800'} text-white font-medium py-3 rounded-md transition`}
+          >
+            {loading ? 'Submitting...' : 'Submit Complaint'}
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -7,12 +7,34 @@ A full-stack web application for managing customer complaints with client and ad
 ### Client Side
 - Submit complaints with name, email, and complaint details
 - Form validation and success confirmation
+- Elegant UI with burgundy/wine red accent color scheme
 
 ### Admin Side
 - View all complaints with details (name, email, message, date, status)
 - Toggle status between "Pending" and "Resolved"
 - Filter complaints by status
 - Delete complaints
+- Responsive table design with visual status indicators
+
+## Screenshots
+
+### Client Submission Form
+To add a screenshot:
+1. Take a screenshot of the client submission form
+2. Save it in a folder named 'screenshots' at the root of your project
+3. Replace this text with: `![Client Form](./screenshots/submission.png)`
+
+### Admin Dashboard
+To add a screenshot:
+1. Take a screenshot of the admin dashboard
+2. Save it in the 'screenshots' folder
+3. Replace this text with: `![Admin Dashboard](./screenshots/admin.png)`
+
+### Success Confirmation
+To add a screenshot:
+1. Take a screenshot of the success confirmation screen
+2. Save it in the 'screenshots' folder
+3. Replace this text with: `![Success Confirmation](./screenshots/confirmation.png)`
 
 ## Tech Stack
 
@@ -26,6 +48,7 @@ The application includes:
 - `/` (or `/submit`) - Public complaint submission form
 - `/admin` - Internal dashboard for complaint management
 - Backend API endpoints with PostgreSQL integration
+- Custom UI with elegant color scheme inspired by professional design aesthetics
 
 ## Setup Instructions
 
@@ -160,7 +183,7 @@ With more time, I would implement:
    - Monitoring and logging infrastructure
 
 4. **UI/UX Improvements**
-   - Responsive mobile design improvements
+   - Further responsive design optimizations
    - Accessibility enhancements
    - Dark mode support
    - Dashboard analytics and trends
